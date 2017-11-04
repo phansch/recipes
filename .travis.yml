@@ -14,7 +14,19 @@ branches:
   only:
     - master
 
-script: 'bundle exec rake spec'
+services:
+  - postgresql
+
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+jobs:
+  include:
+    - stage: test
+      script: 'bin/ci.rb'
+      env:
+        - RUN=test
 
 notifications:
   email: true
