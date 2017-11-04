@@ -1,0 +1,47 @@
+---
+require: rubocop-rspec
+
+AllCops:
+  DisplayStyleGuide: true
+  DisplayCopNames: true
+  Exclude:
+    - tags
+    - log/**/*
+    - bin/**/*
+    - script/**/*
+    - config/initializers/**/*
+    - db/migrate/**/*
+    - db/schema.rb
+    - vendor/**/*
+    - public/**/*
+    - tmp/**/*
+    - node_modules/**/*
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Exclude:
+    - config/**/*
+    - app/models/application_record.rb
+    - app/controllers/**/*
+    - app/helpers/**/*
+    - app/mailers/**/*
+    - app/serializers/**/*
+    - spec/**/*
+    - db/migrate/*
+
+Metrics/BlockLength:
+  Exclude:
+    - config/routes.rb
+    - spec/**/*
+
+Metrics/LineLength:
+  Max: 100
+  AllowURI: true
+
+RSpec/DescribedClass:
+  EnforcedStyle: explicit
+
+RSpec/ExampleLength:
+  Max: 15
