@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  host: localhost
+  port: 5432
+  encoding: unicode
+  username: rails_dev
+  password: your_password
+
+development:
+  <<: *default
+  database: recipes_dev
+
+test:
+  <<: *default
+  database: recipes_test
