@@ -1,0 +1,23 @@
+---
+sudo: false
+language: ruby
+cache: bundler
+bundler_args: '--without debug --jobs 3'
+
+before_install:
+  - gem install bundler
+
+rvm:
+  - 2.4.1
+
+branches:
+  only:
+    - master
+
+script: 'bundle exec rake test'
+
+notifications:
+  email: true
+  on_success: change
+  on_failure: always
+  notify: true
