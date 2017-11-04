@@ -32,7 +32,8 @@ build = Build.new
 
 if ENV['RUN'] == 'test'
   build.run_job('test', 'bundle exec rake spec')
-  build.run_job('lint', 'bundle exec rake lint:haml')
+  build.run_job('lint:haml', 'bundle exec rake lint:haml')
+  build.run_job('lint:rubocop', 'bundle exec rake lint:rubocop')
 end
 
 build.handle_results
