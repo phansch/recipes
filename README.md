@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.org/phansch/recipes.svg?branch=master)](https://travis-ci.org/phansch/recipes)
+
 ## Setup
 
 For development and testing you will need to setup your own postgres user:
