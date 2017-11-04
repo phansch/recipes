@@ -14,6 +14,7 @@ gem 'pg'
 gem 'haml-rails'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
+gem 'shrine'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
