@@ -1,0 +1,18 @@
+= form_for @recipe do |f|
+  .field
+    = f.label :title
+    = f.text_area :title
+  .field
+    = f.label :work_duration
+    = f.number_field :work_duration
+  .field
+    = f.label :cooking_duration
+    = f.number_field :cooking_duration
+  .field
+    = f.label :difficulty
+    = f.text_field :difficulty
+  .field
+    = f.label :instructions
+    = f.text_area :instructions
+  .actions
+    = f.submit 'Save'

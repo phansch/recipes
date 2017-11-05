@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @recipe.title
+%p
+  %b Work duration:
+  = @recipe.work_duration
+%p
+  %b Cooking duration:
+  = @recipe.cooking_duration
+%p
+  %b Difficulty:
+  = @recipe.difficulty
+%p
+  %b Instructions:
+  = @recipe.instructions
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+\|
+= link_to 'Back', recipes_path

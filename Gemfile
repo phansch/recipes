@@ -31,6 +31,10 @@ group :development, :test do
   gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
 end
 
+group :test do
+  gem 'shoulda-matchers', git: 'git@github.com:thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+end
+
 group :development do
   gem 'guard-rspec', require: false
   gem 'haml-lint', require: false
