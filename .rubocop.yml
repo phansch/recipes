@@ -4,6 +4,7 @@ require: rubocop-rspec
 AllCops:
   DisplayStyleGuide: true
   DisplayCopNames: true
+  TargetRubyVersion: 2.3
   Exclude:
     - tags
     - log/**/*

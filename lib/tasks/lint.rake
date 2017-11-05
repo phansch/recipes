@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :lint do
   desc 'Run Haml Linting'
   task :haml do
