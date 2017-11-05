@@ -7,4 +7,16 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
   %body
-    = yield
+    .ui.fixed.inverted.menu
+      .ui.container
+        .header.item
+          = t(:recipes)
+        = link_to 'Home', recipes_path, class: 'item'
+        - if Rails.env.development?
+          .right.menu
+            = link_to 'Travis', 'https://travis-ci.org/phansch/recipes', class: 'ui item'
+            = link_to 'Pull Requests', 'https://github.com/phansch/recipes/pulls', class: 'ui item'
+            = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'ui item'
+
+    .ui.main.text.container
+      = yield
