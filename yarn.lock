@@ -5028,6 +5028,10 @@ tiny-emitter@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.0.0.tgz#bad327adb1804b42a231afa741532bd884cd09ad"
 
+tinymce@^4.7.1:
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-4.7.1.tgz#88c869402b7c99fe6df2801bc732450fdad4f500"
+
 to-arraybuffer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"

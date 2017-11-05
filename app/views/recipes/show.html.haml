@@ -14,7 +14,7 @@
   = @recipe.difficulty
 %p
   %b Instructions:
-  = @recipe.instructions
+  = @recipe.instructions.html_safe
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 \|
