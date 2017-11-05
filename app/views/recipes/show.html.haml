@@ -14,7 +14,7 @@
   = @recipe.difficulty
 %p
   %b Instructions:
-  = @recipe.instructions.html_safe
+  = sanitize @recipe.instructions, tags: %w[em strong a blockquote p], attributes: %w[href]
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 \|
