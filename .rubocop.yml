@@ -35,6 +35,7 @@ Metrics/BlockLength:
   Exclude:
     - config/routes.rb
     - spec/**/*
+    - Guardfile
 
 Metrics/LineLength:
   Max: 100
