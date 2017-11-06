@@ -1,18 +1,7 @@
-= form_for @recipe do |f|
-  .field
-    = f.label :title
-    = f.text_area :title
-  .field
-    = f.label :work_duration
-    = f.number_field :work_duration
-  .field
-    = f.label :cooking_duration
-    = f.number_field :cooking_duration
-  .field
-    = f.label :difficulty
-    = f.text_field :difficulty
-  .field
-    = f.label :instructions
-    = f.text_area :instructions
-  .actions
-    = f.submit 'Save'
+= simple_form_for(@recipe) do |f|
+  = f.input :title, as: :string
+  = f.input :work_duration
+  = f.input :cooking_duration
+  = f.input :difficulty
+  = f.input :instructions
+  = f.button :submit
