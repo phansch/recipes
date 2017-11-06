@@ -19,4 +19,9 @@
             = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'ui item'
 
     .ui.main.text.container
+      - if flash.present?
+        #flash-messages
+          - flash.each do |type, message|
+            .ui.message{ class: type }
+              = message
       = yield
