@@ -29,6 +29,7 @@ Documentation:
     - app/helpers/**/*
     - app/mailers/**/*
     - app/serializers/**/*
+    - app/policies/**/*
     - spec/**/*
     - db/migrate/*
 

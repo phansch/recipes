@@ -5,4 +5,12 @@ class User < ApplicationRecord # :nodoc:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def admin?
+    role == 'admin'
+  end
+
+  def default?
+    role == 'default'
+  end
 end

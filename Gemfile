@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.4'
 gem 'pg'
 
 gem 'devise'
+gem 'pundit'
+
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'puma', '~> 3.7'
@@ -36,6 +38,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'factory_bot_rails'
+  gem 'pundit-matchers'
   gem 'shoulda-matchers',
       git: 'https://github.com/thoughtbot/shoulda-matchers.git',
       branch: 'rails-5'

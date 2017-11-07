@@ -11,7 +11,8 @@ RSpec.describe RecipesController do
     {
       title: 'French Fries',
       instructions: '...',
-      work_duration: 2
+      work_duration: 2,
+      user_id: user.id
     }
   end
 
@@ -22,7 +23,7 @@ RSpec.describe RecipesController do
       work_duration: 2
     }
   end
-  let(:user) { User.create!(email: 'test@test.com', password: '123456') }
+  let(:user) { FactoryBot.create(:user) }
 
   describe 'GET #index' do
     it 'returns a success response' do
