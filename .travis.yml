@@ -1,7 +1,11 @@
 ---
 sudo: false
 language: ruby
-cache: bundler
+cache:
+  bundler: true
+  yarn: true
+  directories:
+    - node_modules
 bundler_args: '--without debug --jobs 3'
 
 before_install:
