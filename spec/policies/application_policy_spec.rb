@@ -8,7 +8,6 @@ RSpec.describe ApplicationPolicy do
 
   let(:record) { FactoryBot.build_stubbed(:recipe) }
 
-
   context 'for a visitor' do
     let(:user) { nil }
 
