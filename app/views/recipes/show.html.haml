@@ -1,6 +1,11 @@
 %p
   %b Title:
   = @recipe.title
+
+%ul
+- @recipe.ingredients.each do |i|
+  %li= i.title
+
 %p
   %b Work duration:
   = @recipe.work_duration
