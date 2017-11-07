@@ -29,6 +29,7 @@ Documentation:
     - app/helpers/**/*
     - app/mailers/**/*
     - app/serializers/**/*
+    - app/policies/**/*
     - spec/**/*
     - db/migrate/*
 
@@ -37,6 +38,9 @@ Metrics/BlockLength:
     - config/routes.rb
     - spec/**/*
     - Guardfile
+
+Metrics/MethodLength:
+  Max: 15
 
 Metrics/LineLength:
   Max: 100

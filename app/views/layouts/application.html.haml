@@ -17,6 +17,25 @@
             = link_to 'Travis', 'https://travis-ci.org/phansch/recipes', class: 'ui item'
             = link_to 'Pull Requests', 'https://github.com/phansch/recipes/pulls', class: 'ui item'
             = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'ui item'
+            = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'ui item'
+        - if current_user
+          .ui.right.dropdown.item
+            = t('nav.my_account')
+            .dropdown.icon
+            .menu
+              = link_to t('nav.profile'), edit_user_registration_path, class: 'item'
+              = link_to t('nav.logout'), destroy_user_session_path, class: 'item', method: :delete
+        - else
+          .right.menu
+            = link_to t('nav.login'), new_user_session_path(current_user), class: 'item'
+
+
+
 
     .ui.main.text.container
+      - if flash.present?
+        #flash-messages
+          - flash.each do |type, message|
+            .ui.message{ class: type }
+              = message
       = yield

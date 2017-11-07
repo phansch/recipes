@@ -1,22 +1,26 @@
 # frozen_string_literal: true
 
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, only: %i[new edit create update destroy]
   before_action :set_recipe, only: %i[show edit update destroy]
 
   def index
     @recipes = Recipe.all
+    authorize @recipes
   end
 
   def show; end
 
   def new
     @recipe = Recipe.new
+    authorize @recipe
   end
 
   def edit; end
 
   def create
     @recipe = Recipe.new(recipe_params)
+    authorize @recipe
 
     respond_to do |format|
       if @recipe.save
@@ -53,11 +57,12 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def recipe_params
     params.require(:recipe).permit(
-      :title, :work_duration, :cooking_duration, :difficulty, :instructions
+      :title, :work_duration, :cooking_duration, :difficulty, :instructions, :user_id
     )
   end
 end

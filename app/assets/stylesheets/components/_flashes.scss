@@ -1,0 +1,7 @@
+.ui.message.error, .ui.message.alert {
+  @extend .ui.message.negative;
+}
+
+.ui.message.notice {
+  @extend .ui.message.info;
+}
