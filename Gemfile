@@ -14,6 +14,7 @@ gem 'pg'
 gem 'devise'
 gem 'pundit'
 
+gem 'cocoon'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'puma', '~> 3.7'
