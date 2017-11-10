@@ -49,5 +49,9 @@ Metrics/LineLength:
 RSpec/DescribedClass:
   EnforcedStyle: explicit
 
+RSpec/DescribeClass:
+  Exclude:
+    - spec/system/**/*
+
 RSpec/ExampleLength:
   Max: 15
