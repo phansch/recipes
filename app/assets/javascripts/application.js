@@ -15,4 +15,5 @@
 //= require semantic-ui
 //= require turbolinks
 //= require tinymce/tinymce
+//= require cocoon
 //= require_tree .

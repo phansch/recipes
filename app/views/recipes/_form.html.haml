@@ -1,7 +1,14 @@
 = simple_form_for(@recipe) do |f|
   = f.input :title, as: :string
+  %h3 Ingredients
+  #ingredients
+    = f.simple_fields_for :ingredients do |ingredient|
+      = render 'ingredient_fields', f: ingredient
+    .links
+      = link_to_add_association 'add ingredient', f, :ingredients
   = f.input :work_duration
   = f.input :cooking_duration
   = f.input :difficulty
   = f.input :instructions
+  = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
   = f.button :submit

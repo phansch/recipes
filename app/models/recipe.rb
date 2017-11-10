@@ -6,6 +6,8 @@ class Recipe < ApplicationRecord # :nodoc:
   has_many :recipes_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipes_ingredients, dependent: :destroy
 
+  accepts_nested_attributes_for :ingredients
+
   belongs_to :user
 
   def owner?(user)
