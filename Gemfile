@@ -14,6 +14,7 @@ gem 'pg'
 gem 'devise'
 gem 'pundit'
 
+gem 'cocoon'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'puma', '~> 3.7'
@@ -38,6 +39,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara-selenium'
   gem 'factory_bot_rails'
   gem 'pundit-matchers'
   gem 'shoulda-matchers',
