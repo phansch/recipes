@@ -12,7 +12,8 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require semantic-ui
+//= require popper
+//= require bootstrap
 //= require turbolinks
 //= require tinymce/tinymce
 //= require cocoon
