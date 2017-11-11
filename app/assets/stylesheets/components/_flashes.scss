@@ -1,7 +1,7 @@
-.ui.message.error, .ui.message.alert {
-  @extend .ui.message.negative;
+.alert.alert-error, .alert.alert-alert {
+  @extend .alert-danger;
 }
 
-.ui.message.notice {
-  @extend .ui.message.info;
+.alert.alert-notice {
+  @extend .alert-info;
 }

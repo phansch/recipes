@@ -14,12 +14,12 @@ gem 'pg'
 gem 'devise'
 gem 'pundit'
 
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'cocoon'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
-gem 'semantic-ui-sass'
 gem 'shrine'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
@@ -51,6 +51,8 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'haml-lint', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
+
+  gem 'therubyracer'
 
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
