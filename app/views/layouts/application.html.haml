@@ -6,36 +6,43 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
   %body
-    .ui.fixed.menu
-      .ui.container
-        .header.item
-          = t(:recipes)
-        = link_to 'Home', recipes_path, class: 'item'
-        - if Rails.env.development?
-          .right.menu
-            = link_to 'Travis', 'https://travis-ci.org/phansch/recipes', class: 'ui item'
-            = link_to 'Pull Requests', 'https://github.com/phansch/recipes/pulls', class: 'ui item'
-            = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'ui item'
-            = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'ui item'
-        - if current_user
-          .ui.right.dropdown.item
-            = t('nav.my_account')
-            .dropdown.icon
-            .menu
-              = link_to t('nav.profile'), edit_user_registration_path, class: 'item'
-              = link_to t('nav.logout'), destroy_user_session_path, class: 'item', method: :delete
-        - else
-          .right.menu
-            = link_to t('nav.login'), new_user_session_path(current_user), class: 'item'
+    .navbar.navbar-expand-lg.navbar-light.bg-light
+      %a.navbar-brand
+        = link_to t(:recipes), recipes_path, class: 'item'
+      %button.navbar-toggler{ type: :button, data: { toggle: :collapse, target: '#navbar-supported-content' }, aria: { controls: 'navbar-supported-content', expanded: false, label: 'Toggle Navigation' } }
+        %span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbar-supported-content
+        %ul.navbar-nav.ml-auto
+          - if Rails.env.development?
+            %li.nav-item.dropdown
+              %a.nav-link.dropdown-toggle#navbar-dropdown-dev{ href: '#', role: :button, data: { toggle: :dropdown }, aria: { haspopup: true, expanded: false } }
+                Dev
+              .dropdown-menu{ aria: { labelledby: 'navbar-dropdown-dev' } }
+                = link_to 'Travis', 'https://travis-ci.org/phansch/recipes', class: 'dropdown-item'
+                = link_to 'Pull Requests', 'https://github.com/phansch/recipes/pulls', class: 'dropdown-item'
+                = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'dropdown-item'
+                = link_to 'GitHub Project', 'https://github.com/phansch/recipes/projects/1', class: 'dropdown-item'
+          %li.nav-item.dropdown
+            - if current_user
+              %a.nav-link.dropdown-toggle#navbar-dropdown-user{ href: '#', role: :button, data: { toggle: :dropdown }, aria: { haspopup: true, expanded: false } }
+                = t('nav.my_account')
+              .dropdown-menu{ aria: { labelledby: 'navbar-dropdown-user' } }
+                = link_to t('nav.profile'), edit_user_registration_path, class: 'dropdown-item'
+                = link_to t('nav.logout'), destroy_user_session_path, class: 'dropdown-item', method: :delete
+            - else
+              %li.nav-item
+                = link_to t('nav.login'), new_user_session_path(current_user), class: 'nav-link'
 
-
-
-
-    .ui.main.text.container
-      - if flash.present?
-        #flash-messages
-          - flash.each do |type, message|
-            .ui.message{ class: type }
-              = message
-      = yield
+    .container
+      .row
+        .col-sm
+          - if flash.present?
+            #flash-messages
+              - flash.each do |type, message|
+                .alert.alert-dismissable{ class: "alert-#{type}", role: :alert }
+                  = message
+                  %button.close{ type: :button, data: { dismiss: :alert }, aria: { label: 'Close' } }
+                    %span{ aria: { hidden: true } } &times;
+          = yield
