@@ -1,3 +1,5 @@
 .nested_fields
   = f.input :title
+  = f.simple_fields_for :amount, f.object.build_amount do |amount|
+    = render 'amounts/amount_fields', f: amount
   = link_to_remove_association 'remove ingredient', f

@@ -4,7 +4,8 @@
 
 %ul
 - @recipe.ingredients.each do |i|
-  %li= i.title
+  %li
+    #{i.amount.value} #{i.amount.unit} #{i.title}
 
 %p
   %b Work duration:
